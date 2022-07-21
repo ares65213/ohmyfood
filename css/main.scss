@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
+@import "color.scss";
+
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'sans-serif';
+}
+
+/* Animation*/
+
+.animation {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffff;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: disappear 200ms forwards 3s;
+  /* Temps d'animation*/
+  transform-origin: top;
+  flex-direction: row;
+}
+
+.ball {
+  width: 2rem;
+  height: 2rem;
+  /*hauteur et largeur des points*/
+  border-radius: 50%;
+  margin: 0 2.5rem;
+  display: flex;
+  background-color: #ffff;
+  position: relative;
+  flex-direction: column;
+  animation: bounce 1s linear infinite;
+
+}
+
+.ball:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.ball:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.ball.ball1 {
+  background-color:$violet;
+}
+
+.ball.ball2 {
+  background-color: $rose;
+}
+
+.ball.ball3 {
+  background-color: $vert;
+}
+/*Animation page d'accueil*/
+@keyframes bounce{
+  0%{
+    bottom: 0;
+    transform: scale(1.2, 0.9);
+
+  }
+  50%{
+bottom:4rem;
+transform: scale(0.9, 1.1);
+
+  }
+  100%{
+    bottom: 0;
+    transform: scale(1.2, 0.9);
+
+  }
+}
+
+     @keyframes disappear{
+    to{
+        transform: scale(0);
+    }
+
+}
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+/*Fin animation page d'accueil*/
+
+
+/*navbar*/
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Shrikhand', 'sans-serif';
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 0 2em rgb(0 0 0 / 25%);
+}
+
+.logo h5 {
+  font-size: 3em;
+  font-weight: 900;
+  font-family: Shrikhand;
+}
+
+/*pour tout les a*/
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*localisation*/
+.localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $grisclair;
+  padding: 1.2em 1em;
+  margin-top: 5px;
+}
+
+.fas.fa-map-marker-alt {
+  margin-right: 1em;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+
+input {
+  font-weight: 700;
+  font-size: 1.2em;
+  border: inherit;
+  color: black;
+  background-color: $grisclair;
+}
+
+
+/*titre*/
+.titreacceuil {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: $gristresclair;
+}
+
+h1 {
+  margin: 1em 0em 1em 0em;
+}
+
+.titreacceuil p {
+  margin: 0em 0em 1.2em 0em;
+}
+
+/*Boutons*/
+div.explorer {
+  background-color: $gristresclair;
+  padding: 1.5em 0 2em 0;
+  display: flex;
+  justify-content: center;
+}
+
+div.explorer input {
+  color: white;
+
+}
+
+.explorer input {
+  border: inherit;
+  background: linear-gradient($rose, $violet);
+  cursor: pointer;
+  padding: 1em;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-radius: 35px;
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  &:hover {
+    transform: scale(1.05);
+    transition-duration: 200ms;
+    /*Temps d'agrandissement */
+    box-shadow: 0.5em 0.5em 0.5em rgb(0 0 0 /25%);
+  }
+}
+
+/* Fonctionnement bouton*/
+.fonctionnement {
+  width: 98%;
+  background-color: white;
+}
+
+.fonctionnement,
+h2 {
+  margin: 30px 0 15px 10px;
+}
+
+.ensemblebouton {
+  display: flex;
+  margin: 0 0 0 -15px;
+}
+
+div.bouton {
+  box-shadow: 0.25em 0.25em 0.5em rgb(0 0 0 /25%);
+  border-radius: 15px;
+  height: 60px;
+  width: 30%;
+  display: flex;
+  margin: 0 0 20px 35px;
+  background-color: #f3f3f3;
+
+  &:hover {
+    background-color: #F4DFFB;
+    /*zoom touche Fontionnement */
+    transform: scale(1.05);
+    transition-duration: 200ms;
+    /*Temps d'agrandissement */
+  }
+}
+
+/*chiffre bouton fonctionnement */
+.bouton .chiffre {
+  background-color: $violet;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 15px 0 0 -15px;
+  color: white;
+}
+
+.bouton i {
+  color: #6D6D6D;
+  margin: 0 1em 0 1em;
+  align-self: center;
+  font-size: 1.2em;
+}
+
+.bouton span {
+  font-size: 1.1em;
+  align-self: center;
+}
+
+/*Restaurants*/
+#restaurant {
+  background-color: $gristresclair;
+  padding: 2em 1em;
+  width: 100%;
+}
+
+.ensemblecartes {
+  margin: 10px 0 10px 18px;
+  width: 98%;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.cartes1,
+.cartes2,
+.cartes3,
+.cartes4 {
+  background-color: white;
+  width: 48%;
+  border-radius: 15px;
+  box-shadow: 0 0 0.5em rgb(0 0 0 /23%);
+}
+
+/*Titre et Coeur des cartes*/
+div.description {
+  width: 100%;
+  margin: 5px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+div.description h3,
+.description p {
+  width: 50%;
+  font-size: 20px;
+  margin: 0px 0 0 5px;
+}
+
+div.card.cartes1 img,
+div.card.cartes2 img,
+div.card.cartes3 img,
+div.card.cartes4 img {
+  padding: 0px;
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+/*coeur*/
+.description,
+.coeur {
+  display: flex;
+  width: 10%;
+  margin-bottom: 1em;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.coeur i {
+  font-size: 2em;
+  position: absolute;
+  transform: translateY(0%);
+}
+
+.fas.fa-heart {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /*prend la forme du coeur*/
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  background-image: linear-gradient($rose, $violet);
+
+  &:hover {
+    opacity: 1;
+    transform: translate(0%);
+  }
+}
+
+/*Nouveau*/
+.cartimg {
+  width: 100%;
+}
+
+.cartimg span {
+  background-color: $vert;
+  color: #3b8468;
+  font-weight: 500;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  position: absolute;
+  margin: 2em 0 0 -6em;
+}
+
+/*footer*/
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  margin: 0;
+  width: 100%;
+
+}
+
+.footerdescription h4 {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: Shrikhand;
+  margin: 20px 0 20px 0;
+}
+
+.footerdescription a {
+  color: white;
+  margin-bottom: 1em;
+  font-size: 15px;
+}
+
+.footerdescription {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 10px 40px;
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*media query*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+
+
+@media all and (max-width: 1024px) {
+
+  /*Titre page d'acceuil */
+  div.titreacceuil {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 0 0px 0;
+  }
+
+  .titreacceuil h1 {
+    margin: 1.5rem 1em 0px 1em;
+
+  }
+
+  .fonctionnement {
+    margin: 10px 0 0 10px;
+  }
+
+  /*titre touche fonctionnement */
+  .fonctionnement h2 {
+    margin: 10px 0 10px 15px;
+  }
+
+  .ensemblebouton {
+    gap: 10px;
+  }
+
+  .ensemblebouton .bouton {
+    width: 30%;
+    justify-content: center;
+  }
+
+  .ensemblecartes {
+    width: auto;
+    padding: 0px;
+  }
+
+  .card {
+    width: 48%;
+  }
+
+  .card img {
+    width: auto;
+  }
+
+}
+
+/*footer*/
+.footer {
+  margin: 0;
+
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Version Tablette*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+@media all and (max-width: 998px) {
+  /*soustitre page d'accueil*/
+
+  .titreacceuil p {
+    margin-top: 1em;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  /*bouton explorer*/
+  .explorer input {
+    padding: 1em;
+    font-weight: 400;
+  }
+
+
+
+  /*boutons fonctionnement*/
+  /*titre Fonctionnement*/
+  .fonctionnement h2 {
+    margin: 40px 0 30px 20px;
+  }
+
+  .ensemblebouton {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1.5em 10px;
+  }
+
+  .ensemblebouton .bouton {
+    width: 95%;
+    margin: 0 0 10px 15px;
+    justify-content: flex-start;
+  }
+
+  .bouton .chiffre {
+    display: flex;
+  }
+
+  /*cartes repas*/
+  .ensemblecartes {
+    display: flex;
+    width: 97%;
+    margin: 0 0 1em 10px;
+    padding: 0px;
+    gap: 20px;
+    justify-content: space-around;
+
+  }
+
+  .card {
+    width: 48%;
+  }
+
+  .card img {
+    width: 50%;
+  }
+
+  /*Footer */
+  .footer {
+    margin: 0;
+  }
+
+  .footerdescription {
+    margin: 0 0 0 30px;
+  }
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*Version mobile*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+@media all and (max-width: 768px) {
+
+  /*logo*/
+  .logo h5 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  /*Recherche Ville*/
+  input#search {
+    width: 100%;
+    margin: 0 -50px 0 0;
+  }
+
+  /*Titre acceuil*/
+  div.titreacceuil {
+    padding: 0 1em;
+    margin: 0px;
+  }
+
+  .titreacceuil h1 {
+
+    font-size: 25px;
+    margin: 20px 1em 10px 1em;
+    text-align: center;
+  }
+
+  .titreacceuil p {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 1em 1em;
+    text-align: center;
+  }
+
+  /*Espace bas bouton Explorer*/
+  div.explorer input {
+    text-align: center;
+    padding: 15px 25px 15px 25px;
+    font-weight: 400;
+
+  }
+
+  /*pour avoir plus de gris en bas d'Explorer*/
+  div.explorer {
+    padding-bottom: 3em;
+  }
+
+  /*Fonctionnement*/
+  .fonctionnement {
+    width: 95%;
+    justify-content: flex-start;
+    margin: 10px 0 3em 15px;
+  }
+
+  .fonctionnement h2 {
+    margin: 2em 0 20px 10px;
+  }
+
+
+  .ensemblebouton {
+    display: flex;
+    align-items: center;
+    margin: 0px 5px 0 5px;
+    gap: 2em;
+    /*Espace entre les boutons */
+    padding: 1.5em 0 1.5em 0;
+
+  }
+
+  .ensemblebouton .bouton {
+    width: 95%;
+    margin: 0px;
+    gap: 2em;
+  }
+
+  .ensemblebouton .bouton .chiffre {
+    width: 2em;
+    height: 2em;
+  }
+
+  .ensemblebouton .bouton span {
+    font-weight: bold;
+    padding: 0 1em 0 1em;
+    width: 90%;
+    margin: 0 10px 0 -10px;
+  }
+
+  /*logo touche fonctionement*/
+  div.bouton i {
+    font-size: 1.4em;
+    padding: 0;
+    margin: 0px -10px 0 -10px;
+
+  }
+
+  /*Cartes restaurant*/
+  #restaurant {
+    width: 100%;
+    margin: 2em 0 0px 0;
+    padding-bottom: 4em;
+    justify-content: center;
+  }
+
+  /*titres restaurant*/
+  #restaurant h2 {
+    margin: 0 0 1em 10px;
+  }
+
+  /*Block cartes*/
+  .ensemblecartes {
+    margin: 0 0px 0 10px;
+  }
+
+  /*cartes Nouveau*/
+  .cartimg span {
+    font-size: 0.9em;
+  }
+
+  /*taille des cartes*/
+  .ensemblecartes .card {
+    width: 100%;
+  }
+
+  /*titre sous titre des cartes*/
+  div.description h3,
+  .description p {
+    width: 80%;
+  }
+
+  /*Footer */
+  .footer {
+    width: 100%;
+    margin: 0 0 0 0px;
+  }
+
+  .footerdescription {
+    margin: 0 0 20px 30px;
+  }
+}
